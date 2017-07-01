@@ -2,7 +2,8 @@
 
 using namespace std;
 
-int main(){
+int main()
+{
     // Display prompt
     cout << "Enter the elapsed time in seconds:\n";
     // Capture input
