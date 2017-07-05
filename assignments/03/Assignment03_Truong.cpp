@@ -9,6 +9,7 @@ int main()
     cout << "Please enter an integer number.\n";
     cout << ">> ";
     cin >> n;
+    cout << "\n";
     // n is zero or positive
     if(n >= 0)
     {

@@ -14,6 +14,7 @@ int main()
     cout << "Enter [R]ock, [P]aper, or [S]cissor\n";
     cout << "Player 2: ";
     cin >> p2;
+    cout << "\n";
     // For use in conditionals
     bool p1Rock = (p1 == 'R') || (p1 == 'r');
     bool p1Paper = (p1 == 'P') || (p1 == 'p');
