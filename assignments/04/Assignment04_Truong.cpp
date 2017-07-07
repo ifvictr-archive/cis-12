@@ -7,7 +7,7 @@ int main()
     // Get player choices
     char p1;
     char p2;
-    int winner;
+    int winner = 0;
     cout << "Enter [R]ock, [P]aper, or [S]cissor\n";
     cout << "Player 1: ";
     cin >> p1;
@@ -23,21 +23,15 @@ int main()
     bool p2Paper = (p2 == 'P') || (p2 == 'p');
     bool p2Scissors = (p2 == 'S') || (p2 == 's');
     // Messages
-    const string ROCK_WIN = "Rock breaks scissors";
-    const string PAPER_WIN = "Paper covers rock";
-    const string SCISSORS_WIN = "Scissors cut paper";
-    const string NO_WIN = "Nobody wins";
+    const string ROCK_WIN = "Rock breaks scissors.";
+    const string PAPER_WIN = "Paper covers rock.";
+    const string SCISSORS_WIN = "Scissors cut paper.";
     // Check who won
+    // Player 1 is rock
     if(p1Rock)
     {
-        // rock = rock
-        if(p2Rock)
-        {
-            cout << NO_WIN;
-            winner = 0;
-        }
         // rock < paper
-        else if(p2Paper)
+        if(p2Paper)
         {
             cout << PAPER_WIN;
             winner = 2;
@@ -49,6 +43,7 @@ int main()
             winner = 1;
         }
     }
+    // Player 1 is paper
     else if(p1Paper)
     {
         // paper > rock
@@ -57,12 +52,6 @@ int main()
             cout << PAPER_WIN;
             winner = 1;
         }
-        // paper = paper
-        else if(p2Paper)
-        {
-            cout << NO_WIN;
-            winner = 0;
-        }
         // paper < scissors
         else if(p2Scissors)
         {
@@ -70,6 +59,7 @@ int main()
             winner = 2;
         }
     }
+    // Player 1 is scissors
     else if(p1Scissors)
     {
         // scissors < rock
@@ -84,17 +74,17 @@ int main()
             cout << SCISSORS_WIN;
             winner = 1;
         }
-        // scissors = scissors
-        else if(p2Scissors)
-        {
-            cout << NO_WIN;
-            winner = 0;
-        }
     }
     // Output winner
-    if(winner > 0)
+    // Player 1 or 2 won
+    if(winner != 0)
     {
         cout << "\nPlayer " << winner << " WINS!";
+    }
+    // There was a tie
+    else
+    {
+        cout << "Nobody wins.";
     }
     // Return with no errors
     return 0;
