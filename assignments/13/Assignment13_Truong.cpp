@@ -76,21 +76,21 @@ bool validateUserInput(int firstInput, int secondInput)
             "Please try again.\n\n";
         return false;
     }
-    // Check if firstInput is bigger than secondInput
-    else if(firstInput > secondInput)
-    {
-        cout <<
-            "\n"
-            "First number must be less than the second number!\n"
-            "Please try again.\n\n";
-        return false;
-    }
     // Check for negatives
     else if((firstInput < 0) || (secondInput < 0))
     {
         cout <<
             "\n"
             "No negative numbers!\n"
+            "Please try again.\n\n";
+        return false;
+    }
+    // Check if firstInput is bigger than secondInput
+    else if(firstInput > secondInput)
+    {
+        cout <<
+            "\n"
+            "First number must be less than the second number!\n"
             "Please try again.\n\n";
         return false;
     }

@@ -10,38 +10,38 @@ int main()
     int sum = 0;
     
     // a
-    cout << 
-        "Enter two positive integer numbers.\n"
-        "First number must be less than the second number:\n"
-        "Enter numbers: ";
     for(;;)
     {
         if(success){
             break;
         }
+        cout << 
+            "Enter two positive integer numbers.\n"
+            "First number must be less than the second number:\n"
+            "Enter numbers: ";
         cin >> firstNum >> secondNum;
-        // Check if firstNum is bigger than secondNum
-        if(firstNum > secondNum)
-        {
-            cout <<
-                "\n"
-                "First number must be less than the second number!\n"
-                "Please try again.\n";
-        }
         // Check for negatives
-        else if((firstNum < 0) || (secondNum < 0))
+        if((firstNum < 0) || (secondNum < 0))
         {
             cout <<
                 "\n"
                 "No negative numbers!\n"
-                "Please try again.\n";
+                "Please try again.\n\n";
+        }
+        // Check if firstNum is bigger than secondNum
+        else if(firstNum > secondNum)
+        {
+            cout <<
+                "\n"
+                "First number must be less than the second number!\n"
+                "Please try again.\n\n";
         }
         else
         {
+            cout << "\n";
             success = true;
         }
     }
-    cout << "\n";
     
     // b
     cout << "Odd integers between " << firstNum << " and " << secondNum << " are:\n";
